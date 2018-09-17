@@ -23,7 +23,7 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 
 #### MIUMS commandline parmeters:
 
-<h4>Options must be provided:</h4>
+<h5>Options must be provided:</h5>
   
 	-sample_id                            XYZ1                      [Every MIUMS run must be supplied with a sample_id.]  
  	-o/-out_dir                           a_folder_name             [A folder with the provided name will be created in the current directory; No '/' or '\' is accepted]
