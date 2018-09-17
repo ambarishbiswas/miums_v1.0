@@ -28,13 +28,13 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 	-sample_id                            XYZ1                      [Every MIUMS run must be supplied with a sample_id.]  
  	-o/-out_dir                           a_folder_name             [A folder with the provided name will be created in the current directory; No '/' or '\' is accepted]
 
-  Options for input sequence(s) in FASTA format:
+<h5>Options for input sequence(s) in FASTA format:</h5>
   
  	-i/-f                                 input_fasta_sequence_file [either gzip compressed (i.e. with extension .gz) or uncompressed FASTA sequence file. Supported extensions are .fa, .fna, .fasta ]
 
 
 
-  Options for input sequence(s) in FASTQ format:
+<h5>Options for input sequence(s) in FASTQ format:</h5>
   
  	-s/-r                                 input_fastq_sequence_file [either gzip compressed (i.e. with extension .gz) or uncompressed FASTQ file. Supported extensions are .fq, .fastq ]
  	-1                                    forward_fastq_file        [Specify the forward reads FASTQ file of paired-end libraries. Supported extensions are .fq, .fastq with/without .gz]
@@ -42,13 +42,13 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
  	--12                                  interleaved_fastq_file    [Specify a FASTQ file with forward and reverse reads interleaved. Supported extensions are .fq, .fastq with/without .gz]
 
 
-  Options for publicly available (meta)genomic NGS reads:
+<h5>Options for publicly available (meta)genomic NGS reads:</h5>
   
  	-sra                                  SRA_Accession             [Accession of (meta)genomic NGS reads from NCBI SRA database]
  	-ena                                  ENA_Accession             [Accession of (meta)genomic NGS reads from ENA database]
 
 
-  Options for reads specific operations:
+<h5>Options for reads specific operations:</h5>
   
  	-read_error_correction                0/1                       [Default is set to 1; MIUMS uses BBmap suite of tools for error correction] 
  	-min_read_length                      20                        [Default value set to 20]
@@ -58,25 +58,23 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 
 
 
-  Options for reads assembly:
+<h5>Options for reads assembly:</h5>
   
- 	-use_reference_sequence_from_assembly 0/1                       [Default is set to 1, which means assembly will be done on the inputted reads/sequences in the inputted prior constructing 
-                                      	                          	a sample specific reference library of marker sequence, which will then be used for classifying archaea, bacteria and viral 
-                                      	                          	reads ]
+ 	-use_reference_sequence_from_assembly 0/1                       [Default is set to 1, which means assembly will be done on the inputted reads/sequences in the inputted prior constructing a sample specific reference library of marker sequence, which will then be used for classifying archaea, bacteria and viral reads ]
 
  	-assembler                            Spades/Megahit            [Default set to SPAdes; to use Megahit assembler specify '-assembler megahit']
  	-assembled_contigs_file               FASTA_seq_file            [specify an existing (multi)FASTA sequence file. Taxonomy prediction of the contigs will be carried out prior constructing a sample specific reference library of marker sequence. Either gzip compressed (i.e. with extension .gz) or uncompressed FASTA sequence file is expected ]
 
 
 
-  Options for Taxonomy search:
+<h5>Options for Taxonomy search:</h5>
   
  	-taxa_assignment_of_contigs           0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on assembled contigs;]
  	-taxa_assignment_of_reads             0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the inputted reads (or reads from the subsampled reads file if opted); ]
 
 
 
-  Options for Iterative classification:
+<h5>Options for Iterative classification:</h5>
   
  	-iterative_search                     0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the contigs in an iterative way, where in each run 'Reference Library of Marker Sequence' created in the previous run(s) will be used for classifying more 'related' contigs ]
 
@@ -86,39 +84,31 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 
  	-is_min_bitscore                      51                        [The bitscore cutoff of the overlapping regions between reference and query sequences; Default is set to 51, but any positive integer is supported; ]
 
- 	-is_min_coverage                      51                        [The minimum coverage cutoff of the overlapping regions between reference and query sequences; Default is set to 51, but any 
-                                      	                          	positive integer is supported; ]
+ 	-is_min_coverage                      51                        [The minimum coverage cutoff of the overlapping regions between reference and query sequences; Default is set to 51, but any positive integer is supported; ]
 
- 	-is_increment                         5                         [Default is set to 5, i.e. in each iteration the is_min_id, is_min_bitscore and is_min_coverage will be incremented by 5 (until 
-                                      	                          	they reach 90); this option ensures that only the more and more sequences with homologous proteins are classified; any positive/negative 
-                                      	                          	real number can be used; ]
+ 	-is_increment                         5                         [Default is set to 5, i.e. in each iteration the is_min_id, is_min_bitscore and is_min_coverage will be incremented by 5 (until they reach 90); this option ensures that only the more and more sequences with homologous proteins are classified; any positive/negative real number can be used; ]
 
 
 
-  Options for additional reporting:
+<h5>Options for additional reporting:</h5>
   
  	-bin_sequences_at                     X                         [Supported values for X are: superkingdom, phylum, class, order, family, genus or species; By default sequence binning will not be done ]
 
- 	-report_dual_predictions              0/1                       [Default is set to 1, MIUMS can identify sequences that contains proteins from organisms belongs to inter-superkingdom; typical 
-                                      	                          	example is viral proteins in bacterial sequence ]
+ 	-report_dual_predictions              0/1                       [Default is set to 1, MIUMS can identify sequences that contains proteins from organisms belongs to inter-superkingdom; typical example is viral proteins in bacterial sequence ]
 
  	-kraken_style_output                  0/1                       [Default is set to 0; Use '1' to create a output file similar to what kraken, CLARKS and kaiju provides]
 
 
-  Other options:
+<h5>Other options:</h5>
   
  	-T/-threads                           N                         [By default the program uses 4 threads; Any positive integer is accepted]
- 	-q/-quiet                             0/1                       [Default is set to 0, which shows program step-by-step logs; Use '1' to turn of the logging; Note, a file log.log will still 
-                                      	                          	be created in the output_folder ]
+ 	-q/-quiet                             0/1                       [Default is set to 0, which shows program step-by-step logs; Use '1' to turn of the logging; Note, a file log.log will still be created in the output_folder ]
 
  	-h/--h/-help/--help                                             [Shows this help]
  	-v/-version                                                     [Shows MIUMS Version ]
  	-rm                                                             [removes the output folder specified by -o or -out_dir (if exists);]
  	-clean                                                          [removes all intermediate temporary files once a process is finished;]
- 	-test                                                           [supported options are: full, fast or custom; If -test is provided, MIUMS uses pre-supplied fastq files for testing the pipeline; 
-                                      	                          	the option 'full' sets parameters for most-comprehensive MIUMS run; The option 'fast' does the least-comprehensive MIUMS 
-                                      	                          	run where reads are classified directly using MIUMS RLMS; The 'custom' option takes all other user parameters except input 
-                                      	                          	fasta/fastq related parameters; ]
+ 	-test                                                           [supported options are: full, fast or custom; If -test is provided, MIUMS uses pre-supplied fastq files for testing the pipeline; the option 'full' sets parameters for most-comprehensive MIUMS run; The option 'fast' does the least-comprehensive MIUMS run where reads are classified directly using MIUMS RLMS; The 'custom' option takes all other user parameters except input fasta/fastq related parameters; ]
 
 
 #### General information:
