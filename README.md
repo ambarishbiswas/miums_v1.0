@@ -1,13 +1,16 @@
-#### MIUMS version:
-A state-of-the-art taxonomy prediction tool for (meta)genomes.	
+#### MIUMS version:V1.0 
+MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
 #### MIUMS syntax:
 
      docker run --rm -it --name miums ambarishbiswas/miums:v1 -h
 
-
 #### MIUMS examples:
+
+     docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -test fast
+
+     docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -test full
 
      docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -sample_id ABCD -f test.fastq -o EFGH
 
@@ -20,17 +23,20 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 #### MIUMS commandline parmeters:
 
-  Output must be provided:
+  Options must be provided:
+  
 	-sample_id                            XYZ1                      [Every MIUMS run must be supplied with a sample_id.]  
  	-o/-out_dir                           a_folder_name             [A folder with the provided name will be created in the current directory; No '/' or '\' is accepted]
 
   Options for input sequence(s) in FASTA format:
+  
  	-i/-f                                 input_fasta_sequence_file [either gzip compressed (i.e. with extension .gz) or uncompressed FASTA sequence file. Supported extensions are .fa, .fna, 
                                       	                          	.fasta ]
 
 
 
   Options for input sequence(s) in FASTQ format:
+  
  	-s/-r                                 input_fastq_sequence_file [either gzip compressed (i.e. with extension .gz) or uncompressed FASTQ file. Supported extensions are .fq, .fastq ]
  	-1                                    forward_fastq_file        [Specify the forward reads FASTQ file of paired-end libraries. Supported extensions are .fq, .fastq with/without .gz]
  	-2                                    reverse_fastq_file        [Specify the reverse reads FASTQ file of paired-end libraries. Supported extensions are .fq, .fastq with/without .gz]
@@ -38,11 +44,13 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Options for publicly available (meta)genomic NGS reads:
+  
  	-sra                                  SRA_Accession             [Accession of (meta)genomic NGS reads from NCBI SRA database]
  	-ena                                  ENA_Accession             [Accession of (meta)genomic NGS reads from ENA database]
 
 
   Options for reads specific operations:
+  
  	-read_error_correction                0/1                       [Default is set to 1; MIUMS uses BBmap suite of tools for error correction] 
  	-min_read_length                      20                        [Default value set to 20]
  	-subsample_reads_to                   N                         [A positive integer 'N' can be provided to create a subsample_reads file using randomly selected reads; This is useful where 
@@ -54,6 +62,7 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Options for reads assembly:
+  
  	-use_reference_sequence_from_assembly 0/1                       [Default is set to 1, which means assembly will be done on the inputted reads/sequences in the inputted prior constructing 
                                       	                          	a sample specific reference library of marker sequence, which will then be used for classifying archaea, bacteria and viral 
                                       	                          	reads ]
@@ -66,6 +75,7 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Options for Taxonomy search:
+  
  	-taxa_assignment_of_contigs           0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on assembled contigs;]
  	-taxa_assignment_of_reads             0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the inputted reads (or reads from the subsampled reads file if 
                                       	                          	opted); ]
@@ -73,6 +83,7 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Options for Iterative classification:
+  
  	-iterative_search                     0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the contigs in an iterative way, where in each run 'Reference 
                                       	                          	Library of Marker Sequence' created in the previous run(s) will be used for classifying more 'related' contigs ]
 
@@ -96,6 +107,7 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Options for additional reporting:
+  
  	-bin_sequences_at                     X                         [Supported values for X are: superkingdom, phylum, class, order, family, genus or species; By default sequence binning will 
                                       	                          	not be done ]
 
@@ -106,6 +118,7 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
 
 
   Other options:
+  
  	-T/-threads                           N                         [By default the program uses 4 threads; Any positive integer is accepted]
  	-q/-quiet                             0/1                       [Default is set to 0, which shows program step-by-step logs; Use '1' to turn of the logging; Note, a file log.log will still 
                                       	                          	be created in the output_folder ]
@@ -120,3 +133,9 @@ A state-of-the-art taxonomy prediction tool for (meta)genomes.
                                       	                          	fasta/fastq related parameters; ]
 
 
+
+General information:
+  For all queries, bugs and updates (and even suggestions how to make MIUMS better) please email Ambarish Biswas [ambarishbiswas@gmail.com]
+  Latest version and other informationcan can be found at: https://github.com/ambarishbiswas/miums_v1.0
+
+  The MIUMS V1.0 is developed as a proof-of-concept for the associated paper, and is free for academic use. If you use MIUMS for your reasearch, please cite the associated paper. 
