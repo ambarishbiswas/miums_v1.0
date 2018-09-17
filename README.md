@@ -114,6 +114,7 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 #### General information:
 
   For all queries, bugs and updates (and even suggestions how to make MIUMS better) please email Ambarish Biswas [ambarishbiswas@gmail.com]
+  
   Latest version and other informationcan can be found at: https://github.com/ambarishbiswas/miums_v1.0
 
   The MIUMS V1.0 is developed as a proof-of-concept for the associated paper, and is free for academic use. If you use MIUMS for your reasearch, please cite the associated paper. 
