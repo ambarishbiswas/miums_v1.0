@@ -102,7 +102,7 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 <h5>Other options:</h5>
   
  	-T/-threads                           N                         [By default the program uses 4 threads; Any positive integer is accepted]
- 	-q/-quiet                             0/1                       [Default is set to 0, which shows program step-by-step logs; Use '1' to turn of the logging; Note, a file log.log will still be created in the output_folder ]
+ 	-q/-quiet                             0/1                       [Default is set to 1, which shows program step-by-step logs; Use '0' to turn of the logging; Note, a file log.log will still be created in the output_folder ]
 
  	-h/--h/-help/--help                                             [Shows this help]
  	-v/-version                                                     [Shows MIUMS Version ]
