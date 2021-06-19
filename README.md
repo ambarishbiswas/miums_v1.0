@@ -1,5 +1,5 @@
 #### MIUMS version:V1.0 
-MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomes.
+MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomic sequences.
 
 
 #### MIUMS syntax:
@@ -8,17 +8,17 @@ MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxon
 
 #### MIUMS examples:
 
-     docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -test fast
+     docker run -v $(pwd):/tmp --rm -it ambarishbiswas/miums:v1 -test fast
 
-     docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -test full
+     docker run -v $(pwd):/tmp --rm -it ambarishbiswas/miums:v1 -test full
 
-     docker run -v $(pwd):/tmp --rm -it --name miums ambarishbiswas/miums:v1 -sample_id ABCD -f test.fastq -o EFGH
+     docker run -v $(pwd):/tmp --rm -it ambarishbiswas/miums:v1 -sample_id ABCD -f test.fastq -o EFGH
 
-     docker run -v /tmp:/tmp --rm -it --name miums ambarishbiswas/miums:v1 -sample_id ABCD -1 test_R1.fastq -2 test_R2.fastq -o EFGH
+     docker run -v /tmp:/tmp --rm -it ambarishbiswas/miums:v1 -sample_id ABCD -1 test_R1.fastq -2 test_R2.fastq -o EFGH
 
-     docker run -v /tmp:/tmp --rm -it --name miums ambarishbiswas/miums:v1 -sample_id SRR390728 -sra SRR390728 -o SRR390728_output
+     docker run -v /tmp:/tmp --rm -it ambarishbiswas/miums:v1 -sample_id SRR390728 -sra SRR390728 -o SRR390728_output
 
-     docker run -v /tmp/ABCD:/tmp --rm -it --name miums ambarishbiswas/miums:v1 -sample_id XYZ -ena ERR2105523 -o output_of_ERR2105523
+     docker run -v /tmp/ABCD:/tmp --rm -it ambarishbiswas/miums:v1 -sample_id XYZ -ena ERR2105523 -o output_of_ERR2105523
 
 
 #### MIUMS commandline parmeters:
