@@ -1,27 +1,24 @@
 #### MIUMS version:V1.0 
-MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomic sequences that can identify novel sequences for which there are no closely related species available in NCBI RefSeq database.
+MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomic sequences that can identify novel sequences for which there are no closely related sequences available in NCBI RefSeq database.
 
 #### MIUMS Description:
 Identification and classification of metagenomic sequences by sequence homology search against publicly available sequence databases (e.g. GenBank, RefSeq etc.) is a common practice. Advances in NGS techniques complemented with growing popularity of metagenomics and lower sequencing cost has been constantly populating these databases with new sequences. While the abundance of new sequences has benefited the identification/classification of metagenomic sequences, it has also significantly increased the amount of computation and data storage requirements. Although it is possible to construct the reference database from an entire database such as RefSeq, the storage and memory requirements to run the prediction becomes impossible in a non-server-like computing environment with limited resources. To address these issues, MIUMS (version 1.0) utilizes a small database of protein sequence fragments that are highly specific to their source organism, The protein sequence fragments (also referred as the protein marker sequences in MIUMS) are collected from full length protein sequences of 224 archaeal, 2810 bacterial and 3958 viral species (minimum sequence length of 5000 nucleotides; published before 1st of March 2017; Refseq release version 79). In addition, an eukaryotic protein sequence database was constructed from 16179736 eukaryotic proteins to be used as negative control. 
 
-#### MIUMS features, input and output:
-MIUMS (V1.0) comes as a complete package in a docker container. It supports:
+#### MIUMS features:
+MIUMS (V1.0) is a complete package comes in a docker container. It supports:
 
 * Downloading raw reads from SRA and ENA databases just specifying relative accessions of the sequence library
 * Supports both fasta raw reads or FASTQ raw reads (single, paired, or interleaved) files as input
 * Read error coorections (using BBmap suite of tools) 
 * Assembly of raw reads (using MegaHit or Spades assemblers) or provide your own assembled contigs file
 * Taxonomic classification (archaea, bacteria and viruses) of reads and contigs
-* Binning of sequences at a given taxa level
-* Can identify novel sequences for which there are no closely related species available in RefSeq database
-* It also offers deep learning techniques to identify more closely related sequences in iterative manner (recommended for metaviromes)  
-	
-	
-	
-	
-	
+* Binning of classified sequences at a given taxa level
+* Can identify novel sequences for which there are no closely related sequences available in RefSeq database
+* It also offers deep learning techniques to identify more closely related sequences in iterative manner (recommended for metaviromes)
+* Generate output in formats similar to other widely used tools (e.g. kraken, kaiju, CLARK)   
 
-#### Benefits of using MIUMS:
+#### MIUMS output:
+By default MIUMS generates a main taxonomy output table and a secondary taxonomy prediction table. The main output taxa table lists inputted sequence IDs followed by predicted taxon ID (determined by LCA), organism (e.g. archaea, bacteria or viruses), genetic compartment (e.g. chromosome, plasmid, Bacteriophage, prophage etc.) and six level of taxonomy (i.e. superkingdom, phylum, class, order, family, genus and species) in tabular format. The second output table shows sequences that are potentially archaea, bacteria or viruses but contains one or more conflicting (i.e. non-superkingdom specific) reference marker protein fragments in their protein sequences. MIUMS also generates a summary file from the main output table, which shows the total number of predicted archaea, bacteria, viruses as well as the total number of bacteriophage, prophage and plasmids. It also gives the error corrected reads fasta file, assembled contigs and a file containing predicted proteins from the contigs.
 
 #### MIUMS installation & displaying help:
 
