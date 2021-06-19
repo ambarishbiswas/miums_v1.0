@@ -1,4 +1,4 @@
-#### MIUMS version:V1.0 
+#### MIUMS version: 1.0 
 MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomic sequences that can identify novel sequences for which there are no closely related sequences available in NCBI RefSeq database.
 
 #### MIUMS Description:
@@ -22,7 +22,7 @@ By default MIUMS generates a main taxonomy output table and a secondary taxonomy
 
 #### MIUMS installation & displaying help:
 
-     docker run --rm -it --name miums ambarishbiswas/miums:v1 -h
+     docker run --rm -it ambarishbiswas/miums:v1 -h
 
 #### MIUMS examples:
 
@@ -81,7 +81,7 @@ By default MIUMS generates a main taxonomy output table and a secondary taxonomy
  	-use_reference_sequence_from_assembly 0/1                       [Default is set to 1, which means assembly will be done on the inputted reads/sequences in the inputted prior constructing a sample specific reference library of marker sequence, which will then be used for classifying archaea, bacteria and viral reads ]
 
  	-assembler                            Spades/Megahit            [Default set to SPAdes; to use Megahit assembler specify '-assembler megahit']
- 	-assembled_contigs_file               FASTA_seq_file            [specify an existing (multi)FASTA sequence file. Taxonomy prediction of the contigs will be carried out prior constructing a sample specific reference library of marker sequence. Either gzip compressed (i.e. with extension .gz) or uncompressed FASTA sequence file is expected ]
+ 	-assembled_contigs_file/-acf               FASTA_seq_file            [specify an existing (multi)FASTA sequence file. Taxonomy prediction of the contigs will be carried out prior constructing a sample specific reference library of marker sequence. Either gzip compressed (i.e. with extension .gz) or uncompressed FASTA sequence file is expected ]
 
 
 
@@ -94,7 +94,7 @@ By default MIUMS generates a main taxonomy output table and a secondary taxonomy
 
 <h5>Options for Iterative classification:</h5>
   
- 	-iterative_search                     0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the contigs in an iterative way, where in each run 'Reference Library of Marker Sequence' created in the previous run(s) will be used for classifying more 'related' contigs ]
+ 	-iterative_search/is                     0/1                       [Default is set to 1, i.e. the taxonomy will be predicted on the contigs in an iterative way, where in each run 'Reference Library of Marker Sequence' created in the previous run(s) will be used for classifying more 'related' contigs. This option is only recomended for metaviromes]
 
  	-is_sensitivity                       HIGH/MEDIUM/LOW           [Default is set to HIGH; The options (i.e. high, medium or low) controls the level of effort given while constructing the 'Reference Library of Marker Sequence (RLMS)'; LOW= only proteins classified in the previous round; MEDIUM= (proteins classified in the previous round + MIUMS RLMS); HIGH= (proteins classified in the previous round + MIUMS RLMS + Negative_control); ]
 
