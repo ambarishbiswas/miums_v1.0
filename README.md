@@ -6,14 +6,15 @@ Identification and classification of metagenomic sequences by sequence homology 
 
 #### MIUMS features, input and output:
 MIUMS (V1.0) comes as a complete package in a docker container. It supports:
-	* Downloading raw reads from SRA and ENA databases just specifying relative accessions of the sequence library
-	* Supports both fasta raw reads or FASTQ raw reads (single, paired, or interleaved) files as input
-	* Read error coorections (using BBmap suite of tools) 
-	* Assembly of raw reads (using MegaHit or Spades assemblers) or provide your own assembled contigs file
-	* Taxonomic classification (archaea, bacteria and viruses) of reads and contigs
-	* Binning of sequences at a given taxa level
-	* Can identify novel sequences for which there are no closely related species available in RefSeq database
-	* It also offers deep learning techniques to identify more closely related sequences in iterative manner (recommended for metaviromes)  
+
+* Downloading raw reads from SRA and ENA databases just specifying relative accessions of the sequence library
+* Supports both fasta raw reads or FASTQ raw reads (single, paired, or interleaved) files as input
+* Read error coorections (using BBmap suite of tools) 
+* Assembly of raw reads (using MegaHit or Spades assemblers) or provide your own assembled contigs file
+* Taxonomic classification (archaea, bacteria and viruses) of reads and contigs
+* Binning of sequences at a given taxa level
+* Can identify novel sequences for which there are no closely related species available in RefSeq database
+* It also offers deep learning techniques to identify more closely related sequences in iterative manner (recommended for metaviromes)  
 	
 	
 	
