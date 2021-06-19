@@ -1,8 +1,10 @@
 #### MIUMS version:V1.0 
 MIcrobial Identification Using Marker Sequence (MIUMS): A state-of-the-art taxonomy prediction tool for (meta)genomic sequences.
 
+#### MIUMS Description:
+Identification and classification of metagenomic sequences by sequence homology search against publicly available sequence databases (e.g. GenBank, RefSeq etc.) is a common practice. Advances in NGS techniques complemented with growing popularity of metagenomics and lower sequencing cost has been constantly populating these databases with new sequences. While the abundance of new sequences has benefited the identification/classification of metagenomic sequences, it has also significantly increased the amount of computation and data storage requirements. Although it is possible to construct the reference database from an entire database such as RefSeq, the storage and memory requirements to run the prediction becomes impossible in a non-server-like computing environment with limited resources. To address these issues, MIUMS (version 1.0) utilizes a small database of protein sequence fragments that are highly specific to their source organism, The protein sequence fragments (also referred as the protein marker sequences in MIUMS) are collected from full length protein sequences of 224 archaeal, 2810 bacterial and 3958 viral species (minimum sequence length of 5000 nucleotides; published before 1st of March 2017; Refseq release version 79). In addition, an eukaryotic protein sequence database was constructed from 16179736 eukaryotic proteins to be used as negative control. 
 
-#### MIUMS syntax:
+#### MIUMS installation & displaying help:
 
      docker run --rm -it --name miums ambarishbiswas/miums:v1 -h
 
