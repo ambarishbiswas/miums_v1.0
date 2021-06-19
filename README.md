@@ -15,7 +15,7 @@ MIUMS (V1.0) is a complete package comes in a docker container. It supports:
 * Binning of classified sequences at a given taxa level
 * Can identify novel sequences for which there are no closely related sequences available in RefSeq database
 * It also offers deep learning techniques to identify more closely related sequences in iterative manner (recommended for metaviromes)
-* Generate output in formats similar to other widely used tools (e.g. kraken, kaiju, CLARK)   
+* Can generate output in formats similar to other widely used tools (e.g. kraken, kaiju, CLARK)   
 
 #### MIUMS output:
 By default MIUMS generates a main taxonomy output table and a secondary taxonomy prediction table. The main output taxa table lists inputted sequence IDs followed by predicted taxon ID (determined by LCA), organism (e.g. archaea, bacteria or viruses), genetic compartment (e.g. chromosome, plasmid, Bacteriophage, prophage etc.) and six level of taxonomy (i.e. superkingdom, phylum, class, order, family, genus and species) in tabular format. The second output table shows sequences that are potentially archaea, bacteria or viruses but contains one or more conflicting (i.e. non-superkingdom specific) reference marker protein fragments in their protein sequences. MIUMS also generates a summary file from the main output table, which shows the total number of predicted archaea, bacteria, viruses as well as the total number of bacteriophage, prophage and plasmids. It also gives the error corrected reads fasta file, assembled contigs and a file containing predicted proteins from the contigs.
