@@ -1,0 +1,2 @@
+#SampleID	nof_contigs	nof_contigs_without_proteins	nof_contigs_identified	nof_archaea	nof_bacteria	nof_viruses	nof_bacteriophage	nof_prophage	nof_plasmid
+Test_1	50000	6239	25515	10130	13533	2818	1390	1049	0
